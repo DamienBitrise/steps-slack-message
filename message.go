@@ -119,7 +119,7 @@ type Field struct {
 	Title string
 
 	// Value is the text value of the field.
-	Value string
+	Text string
 
 	// Short is an optional flag indicating whether the value is short enough
 	// to be displayed side-by-side with other values.
