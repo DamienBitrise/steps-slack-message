@@ -20,7 +20,7 @@ type Message struct {
 	Attachments []Attachment `json:"attachments,omitempty"`
 
 	// Fields is a list of fields to be displayed in a table inside the attachment.
-	Fields []Field `json:"fields,omitempty"`
+	Sections []Section `json:"blocks,omitempty"`
 	
 	// IconEmoji is the emoji to use as the icon for the message. Overrides IconUrl.
 	IconEmoji string `json:"icon_emoji,omitempty"`
@@ -104,6 +104,13 @@ type Attachment struct {
 	//
 	// An attachment may contain 1 to 5 buttons.
 	Buttons []Button `json:"actions,omitempty"`
+}
+
+type Section struct {
+	// Title is displayed as larger, bold text near the top of a attachment.
+	Type string `json:"type,omitempty"`
+	// Fields is a list of fields to be displayed in a table inside the attachment.
+	Fields []Field `json:"fields,omitempty"`
 }
 
 // Field will be displayed in a table inside the attachment.
