@@ -130,8 +130,8 @@ type Field struct {
 func (f Field) MarshalJSON() ([]byte, error) {
 	m := make(map[string]interface{})
 	m["title"] = f.Title
-	m["value"] = f.Value
-	m["short"] = len(f.Value) < 40
+	m["text"] = f.Text
+	m["short"] = len(f.Text) < 40
 	return json.Marshal(m)
 }
 
