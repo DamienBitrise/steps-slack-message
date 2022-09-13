@@ -125,7 +125,7 @@ type Field struct {
 // MarshalJSON implements json.Marshaler.MarshalJSON.
 func (f Field) MarshalJSON() ([]byte, error) {
 	m := make(map[string]interface{})
-	m["title"] = f.Title
+	m["type"] = f.Type
 	m["text"] = f.Text
 	return json.Marshal(m)
 }
