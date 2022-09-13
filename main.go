@@ -106,7 +106,7 @@ func newMessage(c Config) Message {
 			Buttons:    parseButtons(c.Buttons),
 		}},
 		Sections: {
-			Type: 		'section',
+			Type: 		"section",
 			Fields: 	parseFields(c.Fields),
 		},
 		IconEmoji:      selectValue(c.IconEmoji, c.IconEmojiOnError),
