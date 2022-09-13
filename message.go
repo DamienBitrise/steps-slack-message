@@ -19,6 +19,9 @@ type Message struct {
 	// Attachments is a list of structured attachments.
 	Attachments []Attachment `json:"attachments,omitempty"`
 
+	// Fields is a list of fields to be displayed in a table inside the attachment.
+	Fields []Field `json:"fields,omitempty"`
+	
 	// IconEmoji is the emoji to use as the icon for the message. Overrides IconUrl.
 	IconEmoji string `json:"icon_emoji,omitempty"`
 
@@ -69,9 +72,6 @@ type Attachment struct {
 	// The content will automatically collapse if it contains 700+ characters or 5+ linebreaks,
 	// and will display a "Show more..." link to expand the content.
 	Text string `json:"text,omitempty"`
-
-	// Fields is a list of fields to be displayed in a table inside the attachment.
-	Fields []Field `json:"fields,omitempty"`
 
 	// ImageURL is a URL to an image file that will be displayed inside the attachment.
 	//
