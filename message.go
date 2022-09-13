@@ -116,14 +116,10 @@ type Section struct {
 // Field will be displayed in a table inside the attachment.
 type Field struct {
 	// Title is shown as a bold heading above the value text.
-	Title string
+	Type string
 
 	// Value is the text value of the field.
 	Text string
-
-	// Short is an optional flag indicating whether the value is short enough
-	// to be displayed side-by-side with other values.
-	Short bool
 }
 
 // MarshalJSON implements json.Marshaler.MarshalJSON.
@@ -131,7 +127,6 @@ func (f Field) MarshalJSON() ([]byte, error) {
 	m := make(map[string]interface{})
 	m["title"] = f.Title
 	m["text"] = f.Text
-	m["short"] = len(f.Text) < 40
 	return json.Marshal(m)
 }
 
