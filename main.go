@@ -105,7 +105,10 @@ func newMessage(c Config) Message {
 			FooterIcon: c.FooterIcon,
 			Buttons:    parseButtons(c.Buttons),
 		}},
-		Sections:     parseFields(c.Fields),
+		Sections: {
+			Type: 		'section',
+			Fields: 	parseFields(c.Fields),
+		},
 		IconEmoji:      selectValue(c.IconEmoji, c.IconEmojiOnError),
 		IconURL:        selectValue(c.IconURL, c.IconURLOnError),
 		LinkNames:      c.LinkNames,
